@@ -1,0 +1,92 @@
+<div style="text-align:center">
+  <h1 class="header">
+    Register Employee
+  </h1>
+  <div>
+    <form name="form" (ngSubmit)="f.form.valid && registerEmp()" #f="ngForm" novalidate>
+      <div class="container">
+        <div class="row">
+          <div class="form-group">
+            <div class="col-md-1">
+              <label>EmpID:</label>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" readonly="true" name="empID" [(ngModel)]="empl.empID" #empID="ngModel">
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="form-group"  [ngClass]="{ 'has-error': f.submitted && !(firstName.valid || lastName.valid)}">
+            <div class="col-md-1">
+              <label>Name:</label>
+            </div>
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="firstName" [(ngModel)]="empl.firstName" #firstName="ngModel" placeholder="Firstname" required/>
+            </div>
+            <div class="col-md-1">
+              <input type="text" class="form-control" name="lastName" [(ngModel)]="empl.lastName" #lastName="ngModel" placeholder="Surname" required/>
+            </div>
+            <div *ngIf="f.submitted && !firstName.valid" class="help-block">FirstName is required</div>
+            <div *ngIf="f.submitted && !lastName.valid" class="help-block">LastName is required</div>
+          </div>
+          
+        </div>
+        <br/>
+         <div class="row">
+          <div class="form-group" [ngClass]="{'has-error': (email.errors &&  !(email.valid || email.untouched))}">
+            <div class="col-md-1">
+              <label>Email:</label>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" name="email" [(ngModel)]="empl.Email" #email="ngModel"   required
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  placeholder="Enter Email">
+            </div>
+           <div  *ngIf="email.errors && email.errors.required">
+                Email is required
+            </div>
+            <div  *ngIf="email.errors && email.errors.pattern">
+                Email is invalid
+            </div>
+            
+          </div>
+          
+        </div>
+        <br/>       
+         <div class="row">
+          <div class="form-group">
+            <div class="col-md-1" [ngClass]="{'has-error':f.submitted && !pwd.valid}">
+              <label>Password:</label>
+            </div>
+            <div class="col-md-3">
+              <input type="password" class="form-control" [(ngModel)]="empl.empPwd" name="pwd" #pwd="ngModel" placeholder="Enter pwd" required>
+            </div>
+            <div *ngIf="f.submitted && !pwd.valid" class="help-block">Password is required</div>
+            <!-- <div *ngIf="f.submitted && !pwd.valid" class="help-block">Password is required</div> -->
+          </div>          
+        </div> <br/>
+        <div class="row">
+          <div class="form-group" [ngClass]="{'has-error':f.submitted && !Rpwd.valid}">
+            <div class="col-md-1">
+              <label>RePassword:</label>
+            </div>
+            <div class="col-md-3">
+              <input type="password" class="form-control" name="Rpwd" [(ngModel)]="empl.rePwd" placeholder="Enter pwd" #Rpwd="ngModel" required>
+            </div>
+             <div *ngIf="f.submitted && !Rpwd.valid" class="help-block">Retype Password is required</div>
+          </div>
+         
+        </div> <br/> 
+        <div class="row">
+          <div class="col-md-2">
+            <input type="submit" class="btn-primary" id="register" value="Register" />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+   <div *ngIf="emply">
+    Employee Should Login as {{emply.firstName +emply.lastName }} 
+     and Password is  {{emply.rePwd }}
+  </div> 
+  </div>

@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+.boxAlignCenter{
+padding: 50px 30px 50px 52px;
+margin: 30px 10px 10px 340px;
+border-bottom:1px;
+width: 505px;
+height: 202px;
+background-color: aliceblue;
+}
+.spacer{
+    height:5px;
+}
+.header{
+  font-size: 22px;
+   color: #201dec;
+   font-family: cursive;
+    }
+ body{
+    background-image:url(../src/images/im5.jpg);
+    background-repeat: no-repeat;  
+    opacity: 01.5;  
+    
+} 
+.ai-box{
+    border-radius: 10px;
+    margin: 7px -19px -14px 18px;
+    width: 119px;
+}
+  .lineItem{
+ background-color: skyblue;
+  }
+.kw-box {
+    border-top: 1px solid #e0e0e0;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(224, 224, 224);
+    text-align: left;
+    background: #f9f9f9;
+    padding: 8px 20px 8px 20px;
+    font-size: 13px;
+    overflow: hidden;
+}
+/* tr {
+  width:100%;
+  line-height: 2px;
+  
+}*/
+/* input[type=text]{
+  border-radius:10px;
+} */

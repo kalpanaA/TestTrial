@@ -1,0 +1,47 @@
+<div>
+    <!-- <div class="row" style="background-color:black;height:15px;height:33px;text-align:center;">
+        <div class="col-md-3">
+            <a href="/Login" style="color:white;padding:11px;">First</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/EmployeeList" style="color:white;padding:11px">Second</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/Login" style="color:white;padding:11px">Third</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/DayEntry" style="color:white;padding:11px">Fourth</a>
+        </div>
+    </div> -->
+    <div class="row kw-box">
+        <div class="col-md-1">          
+            <div [ngClass]="expand==true ?'glyphicon glyphicon-minus':'glyphicon glyphicon-plus'" (click)="expandF1()" >
+            </div>
+        </div>
+        <div class="col-md-1">
+            <label class="col-md-1" for="taskIDS">Hours</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="hours" />
+        </div>
+        <div class="col-md-1">
+            <label class="col-md-1" for="taskIDS">Task</label>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control" name="taskIDS" [(ngModel)]="entry.taskIDS">
+                         <option [ngValue]="1">Task1DESC-TaskID1</option>
+                         <option [ngValue]="2">Task2DESC-TaskID2</option>
+                         <option [ngValue]="3">Task3DESC-TaskID3</option>
+                     </select>
+        </div>
+        <div class="col-md-2">
+            <textarea rows="1" cols="50" name="comment" form="usrform">
+           Enter text here...
+         </textarea>
+        </div>
+        <div class="col-md-2">
+            <span class="glyphicon glyphicon-pencil" (click)="editEntry(user)"></span>
+            <span class="glyphicon glyphicon-trash" (click)="editEntry(user)"></span>
+        </div>
+    </div>
+</div>
